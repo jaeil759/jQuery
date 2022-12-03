@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		iframe{
+			width : 800px;
+			height : 500px;
+		}
+		img{
+			width : 100px;
+			height : 100px;
+		}
+		p{
+			background-color : pink;
+			width : 50%;
+			height : 40px;
+		}
+		a{
+			border : 5px solid green;
+			width : 500px;
+			height : 100px;
+		}
+	</style>
+</head>
+<body>
+	<h1>iframe</h1>
+	<p>html문서내부에 다른 html문서를 포함한다.</p>
+	
+	<p>iframe의 name속성 title속성 src속성이 온다.</p>
+	<p>iframe의 name속성을 이용하여 링크의 target속성을 부여한다</p>
+	<a href="../0822/welcome.html" target="ifr">welcome</a>
+	<a href="홈페이지연습.html" target="ifr">홈페이지연습</a>
+	<br><br>
+	<iframe src = "tablespan.html" title = "iframe" name = "ifr"></iframe>
+	
+	<br>
+	환영합니다
+	<img src = "../img/야근하는모코코.png" alt = "야근하는모코코.png">
+	<img src = "../img/모코코생일.png" alt = "모코코생일.png">
+	<img src = "../img/모코코4.png" alt = "모코코4.png">
+</body>
+</html>

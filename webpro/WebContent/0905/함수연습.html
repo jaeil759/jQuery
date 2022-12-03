@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<script>
+	function add(x,y){
+		return x + y;
+	}
+	function sub(x,y){
+		return x - y;
+	}
+	function multi(x,y){
+		return x * y;
+	}
+	function divide(x,y){
+		return x / y;
+	}
+
+
+
+
+	function proc1(calc){
+		
+		// 입력한 x,y 값을 가져오기
+		let vx = parseInt(document.getElementById('x').value);
+		let vy = parseInt(document.getElementById('y').value);
+		
+		
+		switch(calc){
+		case "+" : 
+			res = add(vx,vy);
+			break;
+		case "-" : 
+			res = sub(vx,vy)
+			break;
+		case "*" : 
+			res = multi(vx,vy)
+			break;
+		case "/" : 
+			res = divide(vx,vy)
+			break;
+		}
+		document.getElementById('result').value = `${vx} ${calc} ${vy} = ${res}`;
+		document.getElementById('sp1').innerText = vx;
+		document.getElementById('sp2').innerText = vy;
+		document.getElementById('sp3').innerText = res;
+	}
+</script>
+<style>
+	span{
+		background : yellow;
+		width : 100px;
+		height : 30px;
+		display : inline-block;
+	}
+	
+</style>
+</head>
+<body>
+	<div>
+	x : <input type="text" id = "x"><br>
+	y : <input type="text" id = "y"><br>
+	결과 : <input type = "text" id="result"><br>
+	<br>
+		<input type="button" value="+" onclick="proc1('+')">
+		<input type="button" value="-" onclick="proc1('-')">
+		<input type="button" value="*" onclick="proc1('*')">
+		<input type="button" value="/" onclick="proc1('/')">
+	<br><br>
+	
+	<p>첫번째 값 :<span id="sp1"></span> </p>
+      <p>두번째 값 :<span id="sp2"></span> </p>
+      <p>결과 :<span id="sp3"></span> </p>	  
+	</div>
+</body>
+</html>

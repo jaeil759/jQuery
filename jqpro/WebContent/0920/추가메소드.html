@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<script src="../js/jquery-3.6.1.min.js"></script>
+<style>
+	img{
+	width : 100px;
+	height : 80px;
+	}
+</style>
+
+
+<script>
+	$(function(){
+		
+		$('#btn1').on('click', function(){
+			// 이미지만들기
+			vimg = $('<img src = "../img/모코코.png" alt = "코코몽">')
+			
+			//result1 에 추가한다.
+			$(vimg).appendTo($('result1'));
+			$('#result1').append(vimg);
+		})
+		
+		$('#btn2').on('click', function(){
+			vimg = $('<img src = "../img/모코코.png" alt = "코코몽">')
+			
+			//result1 에 추가한다.
+			$(vimg).appendTo($('result1'));
+			$('#result1').prepend(vimg);
+		})
+		
+	})
+</script>
+
+</head>
+<body>
+
+
+<div>
+   <h3>
+  		append : 지정된 요소의 뒤로 추가한다 <br>
+  		prepend : 지정된 요소의 앞으로 추가한다	<br>	
+  				
+  		지정된 요소를 벗어나지 않는다<br>
+  				
+  				
+   </h3>
+   <input type="button" value="append" id = "btn1">
+   <input type="button" value="prepend" id = "btn2">
+   <div id="result1">
+   
+   
+   </div>
+</div>
+
+
+<div>
+   <h3>
+  
+   </h3>
+   <input type="button" value="insert" id = "btn3">
+   <input type="button" value="before" id = "btn4">
+   <div id="result2">
+   
+   
+   </div>
+</div>
+
+</body>
+</html>

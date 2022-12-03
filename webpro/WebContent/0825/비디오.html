@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		img{
+			width : 640px;
+			height : 480px;
+		}
+		#play{
+		display : none;  /* block, inline p*/
+		}
+	</style>
+	
+	<script type="text/javascript">
+		
+	//함수정의
+	function proc(){
+		//html 요소를 검색접근(id를이용, class를 이용, 태그이름을 이용)
+		
+		//iframe 검색
+		var ele = document.getElementById('play');
+		
+		//실행
+		ele.style.display ="block";
+		
+		
+		
+	}
+	
+	
+	</script>
+</head>
+<body>
+	  <video width="640" height="480" controls>
+        <source src="../multi/trailer.mp4" type='video/mp4'>
+        <source src="../multi/trailer.ogv"  type='video/ogg'>
+    </video>
+    
+    <p>유튜브의 동영상을 html로 삽입하기</p>
+    <p>이미지를 클릭하면 동영상이 실행 되도록 하는 proc() 함수를 호출</p>
+    <p>proc()함수를 정의 - id가 play인 html요소를 검색하여 접근</p>
+    
+    
+    
+    
+    <img src="../img/캡쳐.png" alt="캡쳐.png" onclick="proc()">
+    <br><br>
+    <!-- 초기 실행시에는 안보이도록 설정 img를 클릭했을때 보이도록 설정한다. -->
+   <iframe id="play" width="700" height="600" src="https://www.youtube.com/embed/ENB-BSYCg1c?autoplay=1&muted=0" 
+    	title="YouTube video player" >
+    	</iframe>
+    
+    <div></div>
+</body>
+</html>

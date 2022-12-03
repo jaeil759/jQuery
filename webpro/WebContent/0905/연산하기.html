@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<script type="text/javascript">
+	proc1 = () => {
+		// 입력
+		su1 = prompt("첫번째 수 입력");
+		su2 = prompt("두번 째 수 입력")
+		opr = prompt("연산자 입력");
+		
+		
+		//비교 - opr;
+		switch(opr){
+		case "+" : 
+			res = su1 + su2;
+			break;
+		case "-" : 
+			res = su1 - su2;
+			break;
+		case "*" :
+			res = su1 * su2;
+			break;
+		case "/" : 
+			res = su1 / su2;
+			break;
+		
+		}
+			document.querySelector('#result1').innerHTML = `${su1} ${opr} ${su2} = ${res}`
+	}
+
+
+</script>
+</head>
+<body>
+	<pre>
+		버튼클릭시 두 수와 연산자를 입력하여 결과를 출력한다.
+		입력 : prompt
+		출력 : innerHTML or innerText
+	</pre>
+	<div>
+	<input type= "button" value = "확인" onclick = "proc1()">
+	<br><br>
+	
+	<div id = "result1"></div>
+	</div>
+	
+	
+</body>
+</html>

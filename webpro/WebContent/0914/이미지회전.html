@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<style>
+	img{
+		width : 100px;
+		height : 80px;
+	}
+</style>
+<script>
+//시작
+	let gbut = "";
+	imglist = "";
+	rna = -1;
+	function proc1(but){
+		
+		if(imglist !=null && rna >=0){
+			imglist[rna].style.border = "none";
+			}
+		//but : 시작버튼 객체, 지역변수
+		but.style.display = "none";
+		
+		//전역변수에 지역변수but를 할당 한다.
+		gbut = but;
+		
+		// 첫번째 이미지를 선택. firstChild; - 부모.firstChild
+		parent = document.getElementById('result1'); // parent --> 변수명
+		
+		a = setInterval(function(){
+		childImg = parent.firstChild;
+		
+		// 부모의 마지막으로 추가한다 - appendChild
+		parent.appendChild(childImg);
+		},100)
+	}
+	//종료
+	
+	
+	function proc2(){
+
+		//border 를 삭제
+		
+		// 시작버튼을 다시 나타나도록 설정
+		gbut.style.display = "inline";
+		
+		clearInterval(a);
+		
+		//img의 갯수를 얻기
+		imglist = document.getElementsByTagName('img');
+		
+		//random 
+		rna = parseInt(Math.random() * imglist.length);
+		
+		imglist[rna].style.border = "10px double red";
+		
+	}
+</script>
+</head>
+<body>
+
+
+<div>
+   <h3>
+  
+   </h3>
+   <input type="button" value="시작" onclick="proc1(this)">
+   <input type="button" value="종료" onclick="proc2()">
+   <div id="result1">
+   	<img src="../img/별빛등대.png" alt="">
+   	<img src="../img/가을모코코.png" alt="">
+   	<img src="../img/벚꽃모코코.png" alt="">
+   	<img src="../img/야근하는모코코.png" alt="">
+   	<img src="../img/여름방학.png" alt="">
+  
+   </div>
+</div>
+
+</body>
+</html>

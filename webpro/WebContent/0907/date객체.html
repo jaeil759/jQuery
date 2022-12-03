@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script>
+
+today = new Date();  // 오늘 날짜 생성, 전역변수
+
+proc1 = () => {
+   day = today.getDay()
+//   alert(day);
+   
+   switch(day) {
+   case 0:
+      res = "일요일";
+      break;   
+   case 1:
+      res = "월요일";
+      break;   
+   case 2:
+      res = "화요일";
+      break;   
+   case 3:
+      res = "수요일";
+      break;   
+   case 4:
+      res = "목요일";
+      break;   
+   case 5:
+      res = "금요일";
+      break;   
+   case 6:
+      res = "토요일";
+      break;   
+   }
+   str = `${today.toLocaleString()} <br>`;
+   str += `${res}입니다`;
+   
+   document.querySelector('#result1').innerHTML = str;
+}
+
+proc2 = () => {
+   
+   arr = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+   
+   // arr[0], arr[1], ... 이런 식으로 사용
+   
+   str = `${today.toLocaleString()} <br>`;
+//   str += `${arr[today.getDay()]}입니다`;
+    // 혹은
+   day = today.getDay();
+   aa = arr[day];
+   str += `${aa}입니다`;
+    // 이렇게 변수 생성해서 출력할 수도 있음.
+   
+   document.querySelector('#result2').innerHTML = str;
+   
+}
+
+proc3 = () => {
+   
+   myday = new Date("1989. 12. 14");  // 문자로 적어서 따옴표 사용
+   myday2 = new Date(1989, 12 - 1, 14);  // 숫자로 적어서 콤마 사용, 0부터 시작하므로 다른 숫자 나옴... 실제 월보다 -1해서 넣어야 함.
+   
+   // 콘솔에 출력
+   console.log(myday.toLocaleString());
+   console.log(myday2.toLocaleString());
+   
+//   ------------------------------------------------------
+   
+   to = today.getTime();
+   my = myday.getTime();
+   
+   console.log(to, my);  //--> 밀리초값이 나온다. 와우
+   
+   times = to - my;
+   console.log(times);
+   
+   myyear = times / 1000 / 60 / 60 / 24 / 365;  //--> 밀리초에서부터 햇수까지 구하는... 와우
+   
+   str = today.toLocaleString() + "<br>";
+   str += myday.toLocaleString() + "<br>";
+   str += myyear + "년이 경과했습니다.";
+   
+   document.querySelector('#result3').innerHTML = str;
+
+}
+
+proc4 = () => {
+   
+   // 오늘의 millisec
+   to = today.getTime();
+   
+   // 500일의 millisec
+   day500 = 500 * 1000 * 60 * 60 * 24;
+   
+   // 총 millisec값
+   times = to + day500;
+   console.log(times);
+   
+   // 총 millisec를 가지고 새로운 Date객체 생성
+   date500 = new Date(times);
+   
+   str = "오늘 : " + today.toLocaleString() +"<br>";
+   str += "500일 후 : " + date500.toLocaleString() + "<br>";
+
+   document.querySelector('#result4').innerHTML = str;
+
+}
+
+proc5 = () => {
+   
+   // 선택한 날짜를 가져온다.
+   // 'id = selday'를 검색(document 이용)하고 값(value)을 가져온다.
+   selvalue = document.getElementById('selday').value;
+   
+   
+   // 가져온 값으로 Date()객체 생성
+   vsel = new Date(selvalue);
+      
+      
+   // millisec값 구하기
+   to = today.getTime();
+   sel = vsel.getTime();
+   
+   times = to - sel;
+   
+   days = times / 1000 / 60 / 60 / 24;  //--> 밀리초에서부터 날짜까지 구함.
+   
+   
+   // 비교
+   if(days > 7) {
+      res = "교환 불가";
+   } else {
+      res = "교환 가능";      
+   }
+   
+   
+   // 출력
+   str = "오늘 날짜 : " + today.toLocaleString() + "<br>";  // toLocaleString을 안 쓰면 UTC인가 표준시로 나옴;
+   str += "구입한 날짜 : " + vsel.toLocaleString() + "<br><br>";
+   str += days + "일이 경과했습니다." + "<br><br>";
+   str += "---> " + res;
+   
+   document.querySelector('#result5').innerHTML = str;  // 쿼리셀렉터 쓸 때는 아이디에 # 붙여서 쓰기
+   document.getElementById('result5') = str;  // 아니면 그냥 아이디만 쓰기
+   
+   
+   
+}
+
+
+
+</script>
+
+</head>
+<body>
+
+
+<div>
+   <h3>
+   요일구하기 - getDay() : 리턴값은 0(일요일) ~ 6(토요일)<br>
+   If나 switch를 이용<br>
+   배열을 이용<br>
+   </h3>
+   <input type="button" value="if-switch" onclick="proc1()">
+   <input type="button" value="배열이용" onclick="proc2()">
+   <div id="result1"></div>
+   <div id="result2"></div>
+</div>
+
+<div>
+   <h3>
+   태어날 날로부터 현재까지 경과한 날 수를 구하시오. <br>
+   getTime() : 리턴값은 millisec; <br>
+   millisec / 1000 : 실제 경과한 초 
+   </h3>
+   <input type="button" value="몇 년?" onclick="proc3()">
+   <div id="result3"></div>
+</div>
+
+<div>
+   <h3>
+   오늘로부터 500일 후 날짜를 계산하시오. <br>
+   - 현재 날짜의 millisec 구함. <br>
+   - 500일에 대한 ms값을 구함 ( 500 * 1000 * 60 * 60 * 24)
+   </h3>
+   <input type="button" value="500일 후?" onclick="proc4()">
+   <div id="result4"></div>
+</div>
+
+<div>
+   <h3>
+   구입 날짜를 선택하면 그날로부터 오늘까지 7일이 경과했는지 체크하고
+   7일이 경과했으면 '교환 불가', 경과하지 않았으면 '교환 가능'을 출력하시오.
+   </h3>
+   <input type="date" id="selday" > 
+   <input type="button" value="확인" onclick="proc5()">
+   <div id="result5"></div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

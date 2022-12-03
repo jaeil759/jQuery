@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<script>
+	function proc1(){
+		
+	/*	a = setInterval(function(){
+			
+			//색상 발생
+			r = parseInt(Math.random()*256);
+			g = parseInt(Math.random()*256);
+			b = parseInt(Math.random()*256);
+//			document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+			
+			r16 = r.toString(16);
+			g16 = g.toString(16);
+			b16 = b.toString(16);
+			document.body.style.backgroundColor = "#" + r16 + g16 + b16;
+			
+			
+			
+		},500);*/
+		
+		a = setInterval(change, 500); // change function의 참조값
+	}
+	function change(){
+		//색상 발생
+		r = parseInt(Math.random()*256);
+		g = parseInt(Math.random()*256);
+		b = parseInt(Math.random()*256);
+//		document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+		
+		r16 = r.toString(16);
+		g16 = g.toString(16);
+		b16 = b.toString(16);
+		document.body.style.backgroundColor = "#" + r16 + g16 + b16;
+	}
+	function stop(){
+		clearInterval(a);
+	}
+</script>
+</head>
+<body>
+<div>
+   <h3>
+  
+   </h3>
+   <input type="button" value="확인" onclick="proc1()">
+   <input type="button" value="멈춤" onclick="stop()">
+   <div id="result1"></div>
+</div>
+</body>
+</html>

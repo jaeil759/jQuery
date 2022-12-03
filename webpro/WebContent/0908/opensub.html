@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<script>
+	function proc1(){
+	rand = parseInt(Math.random() * 100+1);
+	opener.document.getElementById('result1').innerHTML = rand
+	
+	window.close();
+	}
+</script>
+</head>
+<body>
+	<body>
+	<div>
+		<h3>
+		버튼을 누르면 부모창이동
+		</h3>
+	
+	<input type="button" value="확인" onclick="proc1()">
+	<div id="result1"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<script>
+	function proc1(){
+		str = "protocol : " + location.protocol + "<br>";
+		str += "host : " + location.host + "<br>";
+		str += "port : " + location.port + "<br>";
+		str += "hostname : " + location.hostname + "<br>";
+		str += "href : " + location.href + "<br>";
+		str += "pathname : " + location.pathname + "<br>";
+		
+		document.getElementById('result1').innerHTML = str;
+	}
+	function proc2(){
+//		location.href = "http://192.168.144.10/webpro/0913/test.jsp"
+		location.href="test.jsp"
+	}
+	function proc3(){
+		location.replace("test.jsp");
+	}
+	function proc4(){
+		//랜덤으로 문자열 발생 - 출력
+		
+		// 새로고침 하듯이 reload를 수행한다.
+		
+		arr = ["사랑은 늘 도망가", "별빛같은 나의 사랑아", "손이 참 곱던 그대", "JavaScript", "html", "우리들의 블루스"];
+		//arr[0], arr[5], arr[4] 
+		rnd = parseInt(Math.random() * arr.length);
+		str = "<h1>" + arr[rnd] + "</h1>";
+		
+		document.getElementById('result4').innerHTML = str;
+		document.getElementById('result4').style.color='red';
+		
+		
+		setTimeout(function(){
+			location.reload();
+		},1000)
+	}
+</script>
+</head>
+<body>
+<div>
+   <h3>
+  
+   </h3>
+   <input type="button" value="확인" onclick="proc1()">
+   <div id="result1"></div>
+</div>
+
+
+<div>
+   <h3>
+  
+   </h3>
+   <input type="button" value="목록" onclick="proc2()">
+   <input type="button" value="목록" onclick="location.href='test.jsp?id=a001'">
+   <br>
+   <br>
+   href에서 스크립트 함수 호출
+   <a href="javascript:proc2()">공지사항</a> <br>
+ 
+   onclick = "함수()"
+   <a href="#" onclick="proc2()">공지사항</a><br>
+   
+   onclick = "location.href": onclick="location.href='test.jsp?id=a001'"
+   <a href="#" onclick="location.href='test.jsp?a001'">공지사항</a><br>
+   <div id="result2"></div>
+</div>
+<div>
+   <h3>
+  	location.replace('test.jsp'); <br>
+  	test.jsp로 페이지 변경 - 변경후 되돌아올수 없음<br>
+   </h3>
+   <input type="button" value="리스트" onclick="proc3()">
+   <div id="result3"></div>
+</div>
+<div>
+   <h3>
+  	location.reload();<br>
+  	수행 후 현재 페이지로 다시 로드한다.<br>
+   </h3>
+   <input type="button" value="리스트" onclick="proc4()">
+   <div id="result4"></div>
+</div>
+</body>
+</html>

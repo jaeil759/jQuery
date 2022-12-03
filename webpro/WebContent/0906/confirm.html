@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<script>
+	proc1 = () =>{
+		
+		let str = "";
+		
+		while(true){
+			//수를 입력
+			let su = prompt("수를 입력하세요");
+			for(let i = 1; i<10; i++){
+				str += `${su} * ${i} = ${su*i} <br>`;
+			}
+			// 계속 할건지
+			yn = confirm("계속하시겠습니까?");
+			// 비교
+			if(!yn)break;
+		}
+			document.getElementById('result1').innerHTML = str;
+	}
+</script>
+</head>
+<body>
+	
+	<div>
+		<h3>
+			수를 입력- prompt()<br>
+			입력수에 대한 구구단을 출력한다.<br>
+			계속할지 여부를 묻는다. confirm()
+		</h3>
+	
+
+	<input type="button" value="확인" onclick="proc1()">
+	<div id="result1">
+	</div>
+	</div>
+</body>
+</html>

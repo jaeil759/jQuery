@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+img {
+	width: 300px;
+	height: 100px;
+}
+</style>
+<script>
+	function proc1(){
+		//둘다같음
+		//ultag = document.getElementsByTagName('ul')[0];
+		ultag = document.querySelector('ul');
+		
+		litag = ultag.querySelectorAll('li')
+		
+		str = "";
+		
+		for(let i = 0; i<litag.length; i++){
+			str += litag[i].firstChild.data + "<br>"
+		}
+		document.querySelector('#result1').innerHTML = str;
+		
+	}
+	function proc2(){
+		ultag = document.getElementsByTagName('ul')[1];
+		
+		litag = ultag.querySelectorAll('li');
+		
+		for(i=0; i<litag.length; i++){
+			fdata = litag[i].firstChild.data;
+//			alert(fdata);
+			vimg = document.createElement('img');
+			vimg.src = "../img/" + fdata;
+			vimg.alt = fdata;
+			
+			litag[i].appendChild(vimg);
+			
+		}
+	}
+//	function proc3(litag){
+		proc3 = (litag) => {
+			
+		fdata = litag.firstChild.data;
+		vimg = document.createElement('img');
+		vimg.src = "../img/" + fdata;
+		vimg.alt = fdata;
+		
+		litag.appendChild(vimg);
+	}
+	window.onload = function(){
+		litag = document.querySelectorAll('.eli');
+		for(i=0; i<litag.length; i++){
+		//이벤트 등록
+		//litag[i].addEventListener('click', liclick) // 일반클릭
+		//litag[i].addEventListener('dblclick', liclick) // 더블클릭
+		litag[i].addEventListener('mouseover', liclick) // 마우스 갖다대도 나옴
+		}
+	}
+	function liclick(){
+		//this를 사용 가능하도록 설계 - 클릭한 litag
+		
+		fdata = this.firstChild.data;
+		vimg = document.createElement('img');
+		vimg.src = "../img/" + fdata;
+		vimg.alt = fdata;
+		
+		this.appendChild(vimg);
+	}
+</script>
+</head>
+<body>
+
+
+	<div>
+		<h3></h3>
+		<ul>
+			<li>List Item1</li>
+			<li>List Item2</li>
+			<li>List Item3</li>
+			<li>List Item4</li>
+			<li>List Item5</li>
+		</ul>
+		<input type="button" value="확인" onclick="proc1()">
+		<div id="result1"></div>
+	</div>
+
+
+	<div>
+		<h3>클릭시 li요소에 해당하는 이미지를 추가한다. -모든 요소에 대해서 한번에 추가</h3>
+		<ul>
+			<li>가을모코코.png</li>
+			<li>겨울모코코.png</li>
+			<li>봄모코코.png</li>
+			<li>벚꽃모코코.png</li>
+			<li>캡쳐.png</li>
+		</ul>
+		<input type="button" value="확인" onclick="proc2()">
+		<div id="result1"></div>
+	</div>
+
+
+	<div>
+		<h3>클릭시 li요소에 해당하는 이미지를 추가한다. - 클릭한 요소에 대해서만 &lt;li onclick=
+			"proc3(this)">모코코.png&lt;/li></h3>
+		<ul>
+			<li onclick="proc3(this)">가을모코코.png</li>
+			<li onclick="proc3(this)">겨울모코코.png</li>
+			<li onclick="proc3(this)">봄모코코.png</li>
+			<li onclick="proc3(this)">벚꽃모코코.png</li>
+			<li onclick="proc3(this)">캡쳐.png</li>
+		</ul>
+
+	</div>
+
+
+	<div>
+		<h3>클릭시 li요소에 해당하는 이미지를 추가한다. - 클릭한 요소에 대해서만 이벤트 일괄등록</h3>
+		<ul>
+			<li class="eli">가을모코코.png</li>
+			<li class="eli">겨울모코코.png</li>
+			<li class="eli">봄모코코.png</li>
+			<li class="eli">벚꽃모코코.png</li>
+			<li class="eli">캡쳐.png</li>
+		</ul>
+
+	</div>
+
+</body>
+</html>

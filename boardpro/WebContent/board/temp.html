@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel = "stylesheet" href="../css/public.css">
+
+<style>
+body *{
+	box-sizing : border-box;
+}
+	.panel-body p{
+		/* border : 1px solid gray; */
+		margin : 1px;
+		padding : 2px;
+	}
+	.p1{
+		width : 60%;
+		float : left;
+	}
+	.p2{
+		width : 35%;
+		float : right;
+		text-align : right;
+	}
+	.p3{
+		clear : both;
+	}
+	input[name=reply]{
+		height : 50px;
+		vertical-align : top;
+	}
+</style>
+
+
+<script src="../js/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+<div class="container">
+	 <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Collapsible Group 1</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
+        <p class = "p1">
+        작성자<span class = "sw">홍길동</span> &nbsp;&nbsp;&nbsp;&nbsp;
+        조회수<span class = "sw">0</span>	&nbsp;&nbsp;&nbsp;&nbsp;
+        날짜<span class = "sw">2022-10-06</span>	&nbsp;&nbsp;&nbsp;&nbsp;
+        </p>
+        
+        <p class = "p2">
+       	<input type = "button" name = "등록" class = "action" idx = "20">
+       	<input type = "button" name = "삭제" class = "action" idx = "20">
+        </p>
+        <p class = "p3">
+        내용보기<br>
+        내용보기<br>
+        </p>
+        <p class = "p4">
+        <textarea rows="" cols="60"></textarea>
+        <input type = "button" name = "reply" value = "등록" class = "action" >
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

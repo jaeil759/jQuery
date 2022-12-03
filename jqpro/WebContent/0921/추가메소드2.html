@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script>
+
+	function proc1(v){
+		// v:클릭한 p태그의 this를 넘겨받은 변수, 지역변수, dom변수
+		vattr = $(v).attr('title');
+//	 	vimg = $('<img src=../img/모코코.png' + vattr+ 'alt="">');
+		vimg = $("<img>",{
+			'src' : '../img/' + vattr,
+			'alt' : vattr
+			
+		});
+		// 클릭한 곳에 이미지를 추가한다.
+		$(v).append(vimg);
+		
+	}
+
+	function pingshow(){
+		//클릭한 p태그 : this - title속성을 가져온다
+		vtitle = $(this).attr('title');
+	}
+
+
+	$(function(){
+		
+		pplist = document.querySelectorAll('.pp');
+		for(i=0; i<pplist.length; i++){
+			pplist[i].addEventListener('click', pingshow)
+		}
+		
+		
+		vimg = "<img src='../img/모코코.png' alt='모코코.png'>";
+		})
+		
+		$('#btn1').on('click', function(){
+			
+		})
+		
+		
+		
+		$('#btn2').on('click', function(){
+			
+		})
+	})
+</script>
+<style>
+	img{
+		width : 80px;
+		height : 80px;
+	}
+</style>
+</head>
+<body>
+
+
+<div>
+   <h3>
+   		대상요소의 뒤에 추가, 대상요소의 번의 바깥으로 추가한다.
+  		after(자식요소)
+  		insertAfter(부모요소)
+  		
+		대상요소의 앞으로 추가, 대상요소의 범위 바깥으로 추가한다.  		
+  		before(자식요소)
+  		insertBefore(부모요소)
+   </h3>
+   <input type="button" value="after" id = "btn1">
+   <input type="button" value="before" id = "btn2">
+   <div id="result1">
+   
+   </div>
+   </div>
+ 	<div>
+   <h3>
+   		title속성값을 가져온다 .attr('title')<Br>
+   		title속성값에 해당하는 이미지를 출력한다.<br>
+   </h3>
+ 	<p onclick="proc1(this)" title="모코코">모코코</p>
+ 	<p onclick="proc1(this)" title="모코코">모코코</p>
+ 	<p onclick="proc1(this)" title="모코코">모코코</p>
+ 	<p onclick="proc1(this)" title="모코코">모코코</p>
+   
+   
+   <h3>
+   		이벤트일괄등록
+   </h3>
+ 	<p class = "pp" title="모코코">모코코</p>
+ 	<p class = "pp" title="모코코">모코코</p>
+ 	<p class = "pp" title="모코코">모코코</p>
+ 	<p class = "pp" title="모코코">모코코</p>
+   
+</div>
+
+</body>
+</html>

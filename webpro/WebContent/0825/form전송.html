@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		form{
+			border : 2px solid blue;
+			margin : 20px;
+			padding : 20px;	
+			width : 300px;
+		}
+		span{
+			display : inline-block;
+			width : 70px;
+			height : 30px;
+		}
+	</style>
+	
+	<script>
+	function proc(){
+		//html 요소로 검색 접근 - id,class,tag이름 
+		
+		var uid = document.getElementById('fid');
+		var upass = document.getElementById('fpass');
+		
+		//입력한 id와 pass 값을 가져온다. - value를 사용
+		idvalue = uid.value;
+		passvalue = upass.value;
+		
+		alert(idvalue + ' ' + passvalue);
+	}	
+	function proc2(){
+//html 요소로 검색 접근 - id,class,tag이름 
+		
+		var uid = document.getElementById('fid2');
+		var upass = document.getElementById('fpass2');
+		
+		//입력한 id와 pass 값을 가져온다. - value를 사용
+		idvalue = uid.value;
+		passvalue = upass.value;
+		
+		alert(idvalue + ' ' + passvalue);
+		
+	}
+	
+	
+	</script>
+	
+	
+</head>
+<body>
+<h1>폼 데이터 전송 - GET</h1>
+	<form action ="form전송.jsp" method="GET">
+		<span>아이디</span>
+		<input id="fid" type="text" name="id"><br>
+		<span>비밀번호</span>
+		<input id="fpass" type="password" name="pass"><br>
+				<input  type = "submit" value="로그인">
+				<input type = "reset" value="취소">
+				<input type = "button" value="확인" onclick="proc()">
+	</form>
+
+<h1>폼 데이터 전송 - POST</h1>
+	<form action ="form전송.jsp" method="POST">
+		<span>아이디</span>
+		<input id="fid2" type="text" name="id"><br>
+		<span>비밀번호</span>
+		<input id="fpass2" type="password" name="pass"><br>
+				<input type = "submit" value="로그인">
+				<input type = "reset" value="취소">
+				<input type = "button" value="확인" onclick="proc2()">
+	</form>
+</body>
+</html>

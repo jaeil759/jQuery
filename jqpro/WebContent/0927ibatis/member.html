@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script>
+	$(function(){
+		$('#btn1').on('click', function(){
+			$.ajax({
+				url : 'member.jsp',
+				type : 'get',
+				
+				success : function(result){
+					code = "<table border = '1'>";
+					code += "<tr><td>아이디</td><td>이름</td><td>주소</td><td>전화번호</td><td>이메일</td></tr>";
+					
+					$.each(result, function(i,v){
+					code += `<tr><td>${v.id}</td><td>${v.name}</td><td>${v.addr}</td><td>${v.hp}</td><td>${v.mail}</td></tr>`;
+					})
+					code += "</table>";
+					$('#result1').html(code);
+				},
+				error : function(xhr){
+					alert("상태 : " + xhr.status);
+				},
+				dataType : 'json'
+				
+			})
+		})
+	})
+</script>
+</head>
+<body>
+
+
+<div>
+   <h3>
+	ibatis를 이용하여 오라클 db의 member테이블의 내용을 가져오기<br>
+	
+	오라클 라이브러리<br>
+	ibatis 라이브러리<br>
+	ibatis 설정파일 - DB설정, VO alias설정()<br>
+	SqlMapClient 생성을 위한 sqlMapClientFactory<br>
+	sql쿼리분(crud)을 작성하는 xml만들기  <br>
+   </h3>
+   <input type="button" value="확인" id = "btn1">
+   <div id="result1"></div>
+</div>
+
+</body>
+</html>

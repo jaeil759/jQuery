@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<script>
+	function proc1(){
+		
+		
+		document.getElementById('result1');
+		document.querySelector('#result1');
+		//class = pp인 요소를 검색
+		// 모든 pp요소를 검색 - pplist가 배열
+		pplist = document.getElementsByClassName('pp')
+		//pplist[0] pplist[1]
+		pplist[0].innerHTML = "Hello~~~";
+		//첫번째 pp요소만 검색
+		vpp = document.querySelector('.pp')
+		vpp.innerHTML = "Goodboy";
+		
+		//모든 pp요소를 검색
+		pplist = document.querySelectorAll('.pp');
+		//pplist[0] pplist[1]
+		pplist[2].innerHTML = "사랑은 늘 도망가~~";
+		
+		for(i=0; i<pplist.length; i++){
+			pplist[i].style.backgroundColor = "pink";
+		}
+	}
+</script>
+</head>
+<body>
+	<div>
+		<h3>
+		
+		</h3>
+	
+
+	<input type="button" value="확인" onclick="proc1()">
+	<div id="result1">
+	</div>
+	<p class="pp">p1</p>
+	<p class="pp">p2</p>
+	<p class="pp">p3</p>
+	<p class="pp">p4</p>
+	<p class="pp">p5</p>
+	</div>
+</body>
+</html>

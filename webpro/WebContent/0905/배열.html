@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<script>
+
+	print =(result,fr) =>{
+		document.getElementById(result).innerText = fr;
+		
+	}
+	proc1 =() =>{
+		var fruits = ["사과", "바나나", "키위", "자두", "수박", 100, 200, 300];
+		print('result1',fruits);
+	}
+	proc2 =() =>{
+		var fruits = new Array("사과", "바나나", "키위", "자두", "수박");
+		print('result2',fruits);
+	}
+	proc3 =() =>{
+		var fruits = new Array();
+		fruits[0] = "사과"
+		fruits[1] = "바나나"
+		fruits[2] = "키위"
+		fruits[3] = "자두"
+		fruits[4] = "수박"
+		fruits[5] = 100
+		print('result3',fruits);
+	}
+</script>
+</head>
+<body>
+	<div>
+		<H3>리터럴 배열
+		fruits = ["사과","바나나","키위","자두","수박"];
+		</H3>
+		<input type="button" value="확인" onclick="proc1()">
+		<div id="result1"></div>
+	</div>
+	
+	<div>
+		<H3>배열 Array 생성
+		fruits = new Array("사과","바나나","키위","자두","수박");
+		</H3>
+		<input type="button" value="확인" onclick="proc2()">
+		<div id="result2"></div>
+	</div>
+	
+	
+	<div>
+		<H3>배열 Array 생성
+		fruits = new Array();
+		fruits[0] = "사과"
+		fruits[1] = "바나나"
+		fruits[2] = "키위"
+		fruits[3] = "자두"
+		fruits[4] = "수박"
+		</H3>
+		<input type="button" value="확인" onclick="proc3()">
+		<div id="result3"></div>
+	</div>
+</body>
+</html>

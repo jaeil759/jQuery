@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<script>
+	//랜덤문자열 - 배열로 생성
+	arr = [ "HTML", "JavaScript", "css", "사늘도", "무지개", "모코코", "쿠크세이튼" ];
+	function proc1() {
+
+		// 랜덤발생
+		rnd = parseInt(Math.random() * arr.length);
+		// 랜덤 번째의 문자열을 선택한다.
+		txt = arr[rnd];
+		// txt를 이용하여 textNode생성;
+		tnode = document.createTextNode(txt);
+
+		//p태그를 생성
+		ptag = document.createElement('p');
+
+		// p태그에 tnode를 추가
+		ptag.appendChild(tnode);
+		// result1에 p태그를 추가
+		document.getElementById('result1').appendChild(ptag);
+	}
+	function proc2() {
+		// 부모.removeChild(자식)
+
+		// 부모 - result1 자식 - ptag
+		parent = document.getElementById('result1');
+		child = parent.lastChild;
+		parent.removeChild(child);
+
+	}
+	
+	function tagRemove(){
+		alert('hh');
+	}
+	function proc3() {
+	//랜덤발생
+	rnd = parseInt(Math.random() * arr.length);
+	
+	//랜덤번째의 문자열을 선택
+	txt = arr[rnd];
+	
+	//textNode생성
+	tnode = document.createTextNode(txt);
+	
+	//button생성
+	//<input type="button" value="삭제">
+	//<button type = "button">삭제</button>
+	but = document.createElement('input');
+	but.type = "button";
+	but.value = "삭제";
+/* 	but.onclick = function(){} */
+	but.setAttribute('class','del');
+	but.onclick = function(){
+		// this는 클릭한 삭제버튼
+		// 재울대상(ptag).remove();
+		this.parentNode.remove();
+	
+	}
+
+ 
+	//ptag생성
+	ptag = document.createElement('p');
+	//ptag에 textNode를 추가
+	ptag.appendChild(tnode);
+	//ptag에 button을 추가
+	ptag.appendChild(but);
+	//result2에 p태그 추가
+	document.getElementById('result2').appendChild(ptag);
+	}
+</script>
+
+</head>
+<body>
+
+
+<div>
+   <h3>
+  	새롭게 동적으로 실행중하 새성된요소는 add
+   </h3>
+   <input type="button" value="추가" onclick="proc1()">
+   <input type="button" value="삭제" onclick="proc2()">
+   <div id="result1"></div>
+</div>
+
+
+<div>
+   <h3>
+  
+   </h3>
+   <input type="button" value="추가/삭제" onclick="proc3()">
+   <div id="result2"></div>
+</div>
+
+</body>
+</html>

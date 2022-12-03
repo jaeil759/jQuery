@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	p[class]{
+		background-color : yellow;
+	}
+	p[class=test]{
+		color : red;
+	}
+	p[class ^= test]{
+		font-size : 2.0em;
+	}
+	p[class=hero]{
+		font-weight : bold;
+		font-style : italic;
+		font-size : 2.0em;
+	}
+	
+</style>
+</head>
+<body>
+	<div>
+		<p>사랑은 늘 도망가</p>
+		<p class="test">별빛같은 나의 사랑아</p>
+		<p>우리들의 블루스</p>
+		<p class="test_a">다시 만날 수 있을까</p>
+	</div>
+	
+	<p class="test_b"> 무궁화 꽃이 피었습니다</p>
+	<p class="hero"> 무궁화 꽃이 피었습니다</p>
+	
+</body>
+</html>

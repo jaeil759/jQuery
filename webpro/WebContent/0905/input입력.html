@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+	proc1 = function(){
+		//입력한 값 가져오기 - id가 su1,su2 인 요소를 검색하고 값을 가져온다.
+		//입력한 값은 문자열로 리턴된다. - 연산을 하기 위해서 숫자로 변환한다. - parseInt
+//		var vsu1 = parseInt(document.getElementById('su1').value);
+//		var vsu2 = parseInt(document.querySelector('#su2').value);
+		var vsu1 = document.getElementById('su1').value.trim();
+		var vsu2 = document.querySelector('#su2').value.trim();
+		
+		// 입력이 되지 않은 상태
+		if(vsu1.length < 1){
+			alert("su1을 입력하세요");
+			return false;
+		}
+		if(vsu2.length < 1){
+			alert("su2를 입력하세요");
+			return false;
+		}
+		var sum = parseInt(vsu1) + parseInt(vsu2);
+		
+		
+		//id = result인 요소를 검색 - 출력, value
+		document.querySelector('#result').value = sum;
+		
+		
+	}
+</script>
+<body>
+	첫번째 수<input type = "text" id="su1"><br>
+	두번째 수<input type = "text" id="su2"><br>
+	<br>
+	
+	<input type = "button" value = "확인" onclick = "proc1()">
+	<br><br>
+	결과 : <input type="text" id = "result">
+</body>
+</html>

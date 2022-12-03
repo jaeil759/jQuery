@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#d1 p{
+		background-color : yellow;
+	}
+	#d1 > p{
+		background-color : pink;
+		
+	}
+	#d2 .d2p2 + p{
+		color : red;
+	}
+	#d2 .d2p2 ~ p{
+		color : green;
+	}
+	table{
+		border : 2px solid gold;
+		margin : 50px;
+	}
+	td{
+		width : 500px;
+		height : 50px;
+		text-align : center;
+	}
+	/* .title{
+		background-color : lightgreen;
+		width : 120px;
+	} */
+	td[class=title]{
+		background-color : lightblue;
+		width : 120px;
+	}
+	#tab2 td:first-child{
+		background-color : pink;
+	}
+	table tr{
+		color : blue;
+	}
+</style>
+</head>
+<body>
+	<p>무궁화 꽃이 피었습니다.</p>
+	<p>무궁화 꽃이 피었습니다.</p>
+	<p>무궁화 꽃이 피었습니다.</p>
+	<p>무궁화 꽃이 피었습니다.</p>
+	<p>무궁화 꽃이 피었습니다.</p>
+
+	<div id = "d1">
+		<p>무궁화 꽃이 피었습니다.</p>
+		<p>무궁화 꽃이 피었습니다.</p>
+		<p>무궁화 꽃이 피었습니다.</p>
+		<p>무궁화 꽃이 피었습니다.</p>
+		<p>무궁화 꽃이 피었습니다.</p>
+	</div>
+	<div id="d2">
+		<p>무궁화 꽃이 피었습니다.</p>
+		<p class="d2p2">무궁화 꽃이 피었습니다.</p>
+		<p>무궁화 꽃이 피었습니다.</p>
+		<p>무궁화 꽃이 피었습니다.</p>
+		<p>무궁화 꽃이 피었습니다.</p>
+
+	</div>
+	
+	
+	<table border = "1">
+		<tr>
+			<td>아이디</td>
+			<td>a001</td>
+		</tr>
+		<tr>
+			<td>이름</td>
+			<td>홍길동</td>
+		</tr>
+		<tr>
+			<td>이메일</td>
+			<td>abc123@naver.com</td>
+		</tr>
+		<tr>
+			<td>전화번호</td>
+			<td>010-1234-5678</td>
+		</tr>
+		<tr>
+			<td>주소</td>
+			<td>우리집</td>
+		</tr>
+		<tr>
+			<td>좋아하는 음식</td>
+			<td>치킨,피자, 육회</td>
+		</tr>
+		<tr>
+			<td>첨부파일</td>
+			<td>abc.txt</td>
+		</tr>
+		
+	</table>
+	
+	
+	
+</body>
+</html>

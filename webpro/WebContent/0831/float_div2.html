@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		min-width : 2000px;
+	}
+	img{
+		width : 200px;
+		height : 200px;
+	}
+	li{
+		margin : 4px;
+		padding : 2px;
+	}
+	div{
+		border : 1px solid red;
+		border-radius : 30px;
+		margin : 4px;
+		padding : 3px;
+		padding-top : 10px;
+		box-sizing : border-box;
+	}
+	#header{
+		height : 200px;
+		background : #ffadaf;
+		/* font-size : 2.0em; */
+		text-align : center;
+		line-height : 70px;
+	}	
+	#left{
+		width : calc(30% - 1%);
+		height : 500px;
+		background : #a9d8f1;
+		float : left;
+	}
+	#main{
+		width : calc(70% - 1%);
+		height : 500px;
+		background : #d2f5f9;
+		float : left;
+	}
+	
+	#footer{
+		height : 80px;
+		background : #dff2ad;
+		clear : both;
+	}
+	#footer{
+		font-size : 1.3em;
+		text-align : center;
+	}
+	#dv1{
+		border : 1px dotted green;
+		padding : 15px;
+		height : 48%;
+		background : lightgreen;
+	}
+	#dv2{
+		border : 1px dotted green;
+		padding : 15px;
+		height : 48%;
+		background : lightgreen;
+	}
+	#dv1 p{
+	overflow : auto;
+	} 	
+	
+</style>
+</head>
+<body>
+	<div id= "header">
+	<span>My Blog Page</span><Br>
+		<ul>시멘틱 태그로 만들어진 페이지 입니다.</ul>
+	</div>
+	<div id= "left">
+		<h1>Links</h1>
+		<ul>
+		<li>w3school</li>
+		<li>Naver</li>
+		<li>Daum</li>
+		<figure>
+		<img src = "../img/spongebob.png" alt="스폰지밥"><br>
+		<figurecaption>스폰지밥</figurecaption>
+		</figure>
+		</ul>
+	</div>
+	<div id= "main">
+		<div id = "dv1">
+			<h1>Semantic Tag</h1>
+			<p>
+			</p>
+			</div>
+			<br><br>
+			<div id= "dv2">
+			<h1>Semantic Tag</h1>
+			<p></p>
+		</div>
+	</div>
+	
+	
+	<div id= "footer">Copyright (c)2019 Hong</div>
+</body>
+</html>

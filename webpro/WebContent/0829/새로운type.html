@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href=../css/public.css>
+<style>
+	pre{
+		background-color : lightgreen;
+	}
+	body{
+		background-color : yellow;
+	}
+</style>
+<script>
+	function proc1(){
+//		선택한 배경색을 갖고온다
+//		html 요소검색 접근
+		var a = document.fr2.col;
+		var a = document.getElementById('col');
+		var a = document.querySelector("#col");
+		console.log(a.value);
+		
+		
+		var a = document.fr2.col.value;
+		var a = document.getElementById('col').value;
+		var a = document.querySelector("#col").value;
+		console.log(a)
+		
+		
+		document.body.style.backgroundColor = a;
+		
+		
+	};
+	</script>
+</head>
+<body>
+<pre style= "background-color : lightblue;">
+	폼 요소의 속성
+	required : 필수항목을 설정
+	title : 요소에 마우스를 올려놓았을때 나타나는 글자
+	pattern  : 입력시 데이터의 형식을 설정
+	placeholder : 입력요소에 임시로 나타나는 글자
+</pre>
+	<form name = "fr" action="새로운type.jsp" method="POST">
+		이메일 <input type="email" name = "email" title="홍길동" placeholder="abc123@naver.com"><br>
+		전화번호 <input type="tel" name = "tel" required pattern ="[0-9]{3}-[0-9]{4}-[0-9]{4}" title="010-1234-5678"><br>
+		생일 <input type="date" name="bir"><br>
+		나이 <input type="number" name="age" min="10" max = "100" step="1" value="20"><br>
+		<input type="submit" value="전송">
+			
+		</form>
+		<br>	
+		
+		<form name = "fr2">
+			배경색<input type="color" name = "col"  id="col">
+			<input type = "button" value = "확인" onclick="proc1()">
+		
+		</form>
+</body>
+</html>

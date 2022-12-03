@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<style>
+input[type=image]{
+		width : 50px;
+		height : 40px;
+		
+	}
+	select{
+	width : 200px;
+	height : 50px;
+	font-size : 1.5em;
+	}
+		
+	
+	</style>
+</head>
+<body>
+<pre>
+	전송기능
+	&lt;input type="submit" value = "전송">
+	&lt;input type="image" src="../img/캡쳐.png" alt="제출">
+	&lt;button>제출&lt;/button>
+	&lt;button type = "submit">전송&lt;/button>
+</pre>
+	<form action="form전송.jsp"  method="POST">
+		아이디 <input type="text" name="id" id="id"><br>
+		이름 <input type = "text" name="name" id="name"><br>
+		
+		고객의견<br>
+		<textarea name = "area" rows="5" cols="50"></textarea>
+		<br>
+		
+		선택하세요
+		<select name = "foods" multiple = "multiple" size="6">
+			<option>떡볶이</option>
+			<option>갈비</option>
+			<option>삼겹살</option>
+			<option>곱창</option>
+			<option>치킨</option>
+			<option>피자</option>
+			<option>햄버거</option>
+		</select>
+		<br>
+		<br>
+		
+		
+		<input type="submit" value = "전송">
+		<input type = "button" value = "확인">
+		<input type="image" src="../img/캡쳐.png" alt="제출">
+		<br><br>
+		<button>제출</button>
+		<button type = "submit">전송</button>
+		<button type = "button">확인</button>
+	</form>
+</body>
+</html>

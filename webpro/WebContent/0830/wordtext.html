@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	p{
+		border : 2px solid green;
+		width : 50%;
+		height : 100px;
+		word-wrap : break-word;
+		overflow : auto; /* scroll, hidden */
+	}
+</style>
+<script>
+	var str = ["HappyNewYear","사랑은늘도망가","별빛같은나의사랑어","우리들의블루스","다시만날수있을까"];
+	function proc1(){
+//	str[0] str[4] str[3]		
+		var rand = parseInt(Math.random()*str.length);
+		console.log(str[rand]);
+		
+		var ptag = document.getElementsByTagName('p')[0];
+		console.log(ptag);
+		
+	
+		// ptag에 랜덤으로 발생되는 문자열을 추가한다 - 문자열을 node로 설정
+		var text = document.createTextNode(str[rand]);
+		ptag.appendChild(text);
+	}
+</script>
+</head>
+<body>
+	<p class ="a">
+	Time is but the stream I go a fishing in.
+	</p>
+	<input type="button" value ="확인" onclick="proc1()">
+</body>
+</html>

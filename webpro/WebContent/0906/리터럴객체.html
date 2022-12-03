@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<script type="text/javascript">
+	const rect = { 
+			width : 10,
+			height : 5,
+			area(){
+				return this.width * this.height;
+			},
+			circum(){
+				return (this.width + this.height)*2;
+				
+			}
+			/* area : function(){
+				return this.width * this.height;
+			},
+			circum : function(){
+				return (this.width + this.height)*2;
+			} */
+	}
+	proc1 = () => {
+		// name속성 동적으로 추가가능
+		rect.name = "사각형";
+		//함수 aaaa() 동적으로 추가 가능
+		// rect.aaaa = function(){}
+		//rect 정보를 출력
+		print('result1');
+	}
+	print = (result1) => {
+		str = "가로 : " + rect.width + "<br>";
+		
+		str = `가로 : ${rect.width} <br>`;
+		str += `세로 : ${rect.height} <br>`;
+		str += `이름 : ${rect.name} <br>`;
+		str += `면적 : ${rect.area()} <br>`;
+		str += `둘레 : ${rect.circum()} <br>`;
+		
+		document.getElementById(result1).innerHTML = str;
+	}
+	proc2 = () =>{
+		// 가로세로 입력
+		rect.width = prompt("가로입력");
+		rect.height = prompt("세로입력");
+// 이렇게가능
+//		rect.name = "네모";
+//		rect.name = prompt("이름입력");
+		// 정보출력
+		print('result2');
+	}
+	proc3 = () =>{
+		const circle = {}; //비어있는 객체를 선언
+		
+		//정보대입 - 속성 : rad, 메소드 area() circum()
+		circle.rad = 4;
+		circle.area = function(){
+			return this.rad * this.rad * Math.PI;
+		}
+		circle.circum = function(){
+			return 2 * Math.PI * this.rad
+		}
+		
+		a=circle.area().toFixed(2);
+		b=circle.circum().toFixed(2);
+		
+		// 정보 출력
+		str = "반지름 : " + circle.rad + "<br>";
+		str += `면적 : ${a} <br>`;
+		str += `둘레 : ${b} <br>`;
+		
+		document.getElementById('result3').innerHTML = str;
+	}
+</script>
+</head>
+<body>
+	<pre>
+	const rect = { 
+			width : 10,
+			height : 5,
+			area(){
+				return this.width * this.height;
+			},
+			circum(){
+				return (this.width + this.height)*2;
+				
+			}
+		}
+	</pre>
+	<div>
+		<h3>
+			proc1() 함수 호출하여 정보를 출력
+			출력은 print()함수를 이용한다.
+		</h3>
+	
+
+	<input type="button" value="확인" onclick="proc1()">
+	<div id="result1">
+	</div>
+	</div>
+	
+	<div>
+		<h3>
+			proc2() 함수를 호출하여 
+			가로, 세로를 입력하여 rect의속성(width,height)값으로 대입한다.
+			정보를 출력한다.
+		</h3>
+	
+
+	<input type="button" value="확인" onclick="proc2()">
+	<div id="result2">
+	</div>
+	</div>
+	
+	<div>
+		<h3>
+			proc3() 함수를 호출하여
+			circle 객체를 선언 - 비어있는 객체
+			속성과 함수를 동적으로 추가하여 사용
+		</h3>
+	
+
+	<input type="button" value="확인" onclick="proc3()">
+	<div id="result3">
+	</div>
+	</div>
+</body>
+</html>

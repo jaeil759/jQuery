@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<script>
+	function proc1(){
+		//window.open(url,name,specs)
+		//window.open("http://www.naver.com");
+		
+		//window.open('random객체.html','_self' );
+		//window.open('String객체.html', "스트링","width=500 height=400 top=300 left=500");
+		a = window.open('opensub.html',"_blank","width=500 height=300 top=100 left=100");
+		a.moveTo(200,200);
+	}
+</script>
+</head>
+<body>
+	<div>
+		<h3>
+		버튼을 누르면 부모창이동
+		</h3>
+	
+	<input id="number" type = "text">
+	<input type="button" value="확인" onclick="proc1()">
+	<div id="result1"></div>
+	</div>
+</body>
+</html>

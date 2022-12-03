@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	
+</head>
+<body>
+	<div id = "result1"></div>
+	<script type="text/javascript">
+	
+	//시작하면 id = result1인 요소에 오늘의 날짜를 출력한다.
+	
+	//날짜 객체를 생성
+	var today = new Date();
+	//id = result1인 요소를 검색
+	var vres = document.querySelector('#result1');
+	//출력내용 
+	var str = today + "<br>";
+	str += today.toLocaleString() + "<br>";
+	
+	vres.innerHTML = str;
+	
+	</script>
+	
+</body>
+</html>
